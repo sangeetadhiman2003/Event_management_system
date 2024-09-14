@@ -1,0 +1,21 @@
+<h1>Attendee Details</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Attendee Information</h4>
+        </div>
+        <div class="card-body">
+          <p><strong>User:</strong> <%= @attendee.user.email %></p>
+          <p><strong>Event:</strong> <%= @attendee.event.name %></p>
+        </div>
+        <div class="card-footer">
+          <%= link_to 'Edit', edit_attendee_path(@attendee), class: 'btn btn-warning' %>
+          <%= link_to 'Back', attendees_path, class: 'btn btn-secondary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

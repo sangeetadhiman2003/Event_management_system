@@ -1,0 +1,30 @@
+<h1>Attendees</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Event</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @attendees.each do |attendee| %>
+            <tr>
+              <td><%= attendee.user.email %></td>
+              <td><%= attendee.event.name %></td>
+              <td>
+                <%= link_to 'Show', attendee_path(attendee), class: 'btn btn-primary btn-sm' %>
+                <%= link_to 'Edit', edit_attendee_path(attendee), class: 'btn btn-warning btn-sm' %>
+                <%= link_to 'Delete', attendee_path(attendee), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
