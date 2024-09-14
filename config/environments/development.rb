@@ -73,4 +73,14 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # SMTP settings for gmail
+config.action_mailer.smtp_settings = {
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :user_name            => "sangeetadhiman2003@gmail.com",
+  :password             => "gsmiovukycyphoxj",
+  :authentication       => "plain",
+  :enable_starttls_auto => true
+}
 end
