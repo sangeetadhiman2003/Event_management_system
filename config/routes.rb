@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'events#index'
-  resources :events do
-    post :register, on: :member
+    root to: 'events#index'
+    resources :events do
+    resources :attendees, only: [:new, :create]
   end
-  resources :attendees, only: [:index, :show, :destroy]
 end
